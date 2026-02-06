@@ -99,6 +99,36 @@ INSERT INTO `it03` VALUES ('a6f2j7h5-6i7f-9j8g-4h9i-6789012345fa','รายก�
 UNLOCK TABLES;
 
 --
+-- Table structure for table `it04`
+--
+
+DROP TABLE IF EXISTS `it04`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `it04` (
+  `id` char(36) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `profile` longtext NOT NULL,
+  `birthday` date NOT NULL,
+  `occupation` varchar(100) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `it04`
+--
+
+LOCK TABLES `it04` WRITE;
+/*!40000 ALTER TABLE `it04` DISABLE KEYS */;
+/*!40000 ALTER TABLE `it04` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping events for database 'exam'
 --
 
@@ -115,4 +145,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-02-06 18:43:42
+-- Dump completed on 2026-02-06 22:48:02
