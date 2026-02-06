@@ -1,0 +1,150 @@
+.header {
+  background: #27ae60;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+}
+
+.container {
+  margin: 20px;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.add-btn {
+  float: right;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  background: #fff;
+}
+.data-table th {
+  background: #2980b9;
+  color: #fff;
+  padding: 8px;
+  border: 1px solid #222;
+}
+.data-table td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #222;
+}
+.view-btn {
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.view-btn:hover {
+  background: #2980b9;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-box {
+  background: #fff;
+  border-radius: 8px;
+  min-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+  border: 2px solid #222;
+}
+.form-row {
+  margin: 20px 20px 0 20px;
+  display: flex;
+  align-items: center;
+}
+.form-row label {
+  width: 90px;
+}
+.form-row input,
+.form-row textarea {
+  margin-left: 10px;
+  width: 200px;
+}
+.form-row textarea {
+  height: 60px;
+}
+.form-actions {
+  margin: 20px;
+  text-align: right;
+}
+.save-btn {
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.cancel-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.close-btn {
+  cursor: pointer;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.close-btn:hover {
+  background: #c0392b;
+}
+.add-btn,
+.save-btn,
+.cancel-btn,
+.view-btn,
+.close-btn {
+  cursor: pointer;
+}
+.add-btn:hover {
+  background: #217dbb;
+}
+
+.save-btn:hover {
+  background: #1c5d99;
+}
+
+.cancel-btn:hover,
+.close-btn:hover {
+  background: #c0392b;
+}
+
+.view-btn:hover {
+  background: #1c5d99;
+}
