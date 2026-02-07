@@ -56,10 +56,10 @@ func (h *UserHandler) Login(c *fiber.Ctx) error {
 
 	tokenString, err := token.SignedString(jwtSecret)
 	if err != nil {
-		return c.Status(500).JSON(fiber.Map{"error": "Could not generate token"})
+		return c.Status(401).JSON(fiber.Map{"error": "Could not generate token"})
 	}
 
-	return c.JSON(fiber.Map{
+	return c.Status(200).JSON(fiber.Map{
 		"token":    tokenString,
 		"username": user.Username,
 	})
@@ -84,5 +84,5 @@ func (h *UserHandler) Register(c *fiber.Ctx) error {
 		return c.Status(400).JSON(fiber.Map{"error": err.Error()})
 	}
 
-	return c.JSON(fiber.Map{"message": "Register success"})
+	return c.Status(200).JSON(fiber.Map{"message": "Register success"})
 }

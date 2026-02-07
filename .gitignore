@@ -3093,3 +3093,7 @@ client_vue/node_modules/yallist/LICENSE
 client_vue/node_modules/yallist/package.json
 client_vue/node_modules/yallist/README.md
 client_vue/node_modules/yallist/yallist.js
+client_vue/node_modules/.vite/deps/_metadata.json
+client_vue/node_modules/.vite/deps/package.json
+client_vue/node_modules/.vite/deps/vue.js
+client_vue/node_modules/.vite/deps/vue.js.map

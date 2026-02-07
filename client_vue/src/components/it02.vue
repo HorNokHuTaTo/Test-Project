@@ -1,12 +1,10 @@
-<!-- filepath: src/components/it_02.vue -->
 <template>
   <div>
-    <!-- IT 02-1: Login Form -->
     <div v-if="page === 'login'" class="box">
       
       <header class="header">IT 02-1</header>
       <div class="form-row">
-        <label>User</label>
+        <label>Username</label>
         <input v-model="loginForm.username" />
       </div>
       <div class="form-row">
@@ -90,7 +88,7 @@ export default {
   name: "IT02",
   data() {
     return {
-      page: "login", // login | register | welcome
+      page: "login", 
       loginForm: { username: "", password: "" },
       registerForm: { username: "", password: "", confirm_password: "" },
       registerError: "",
