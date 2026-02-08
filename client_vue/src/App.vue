@@ -17,8 +17,13 @@ import IT02 from './components/it02.vue'
 import IT03 from './components/it03.vue'
 import IT04 from './components/it04.vue'
 import IT05 from './components/it05.vue'
+import IT06 from './components/it06.vue'
+import IT07 from './components/it07.vue'
+import IT08 from './components/it08.vue'
+import IT09 from './components/it09.vue'
+import IT10 from './components/it10.vue'
 export default {
-  components: { IT01, IT02, IT03, IT04, IT05 },
+  components: { IT01, IT02, IT03, IT04, IT05, IT06, IT07, IT08, IT09, IT10 },
   data() {
     return {
       current: 1,
@@ -31,7 +36,11 @@ export default {
       if (this.current === 3) return 'IT03'
       if (this.current === 4) return 'IT04'
       if (this.current === 5) return 'IT05'
-      // ถ้ามี IT03 ถึง IT10 ให้เพิ่มตรงนี้
+      if (this.current === 6) return 'IT06'
+      if (this.current === 7) return 'IT07'
+      if (this.current === 8) return 'IT08'
+      if (this.current === 9) return 'IT09'
+      if (this.current === 10) return 'IT10'
       return null
     },
   },

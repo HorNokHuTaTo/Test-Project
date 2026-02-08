@@ -5,7 +5,6 @@
       {{ successMessage }}
         </div>
     <form @submit.prevent="submitForm">
-      <!-- First Row -->
       <div class="form-row">
         <div class="form-group">
           <label>First Name</label>
@@ -26,8 +25,6 @@
           <span v-if="errors.lastName" class="error-text">{{ errors.lastName }}</span>
         </div>
       </div>
-
-      <!-- Second Row -->
       <div class="form-row">
         <div class="form-group">
           <label>Email</label>
@@ -48,8 +45,6 @@
           <span v-if="errors.phone" class="error-text">{{ errors.phone }}</span>
         </div>
       </div>
-
-      <!-- Third Row -->
       <div class="form-row">
         <div class="form-group">
           <label>Profile</label>
@@ -76,13 +71,10 @@
           <label>Birth Day</label>
           <div class="input-with-button">
             <input v-model="formData.birthDay" type="date" />
-            <!-- <button type="button" class="date-btn">📅</button> -->
           </div>
           <span v-if="errors.birthDay" class="error-text">{{ errors.birthDay }}</span>
         </div>
       </div>
-
-      <!-- Fourth Row -->
       <div class="form-row">
         <div class="form-group full-width">
           <label>Occupation</label>
@@ -98,8 +90,6 @@
           <span v-if="errors.occupation" class="error-text">{{ errors.occupation }}</span>
         </div>
       </div>
-
-      <!-- Sex Radio -->
       <div class="form-row">
         <div class="form-group full-width">
           <label>Sex</label>
@@ -115,8 +105,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Buttons -->
       <div class="form-buttons">
         <button type="submit" class="save-btn">Save</button>
         <button type="button" @click="clearForm" class="clear-btn">Clear</button>
@@ -196,7 +184,7 @@ export default {
       return re.test(email);
     },
     isValidPhone(phone) {
-      const re = /^0[0-9]{9}$/; // example: Thai format 10 digits starting with 0
+      const re = /^0[0-9]{9}$/; 
       return re.test(phone);
     },
     handleProfileChange(e) {
@@ -216,7 +204,6 @@ export default {
       return `${dd}/${mm}/${yyyy}`;
     },
     async submitForm() {
-      // validate all
       ['firstName','lastName','email','phone','profile','birthDay','occupation','sex'].forEach(f => this.validateField(f));
       if (Object.keys(this.errors).length) return;
 
@@ -244,11 +231,8 @@ export default {
           return;
         }
  
-        
-        // ensure message includes id
         this.successMessage = `${data.message} id : ${data.id}`;
         setTimeout(()=> this.successMessage = '', 3000);
-        // clear form after success
         this.clearForm();
       } catch (err) {
         console.error(err);

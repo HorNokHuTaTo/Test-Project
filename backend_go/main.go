@@ -7,6 +7,11 @@ import (
 	"test_project/handler/it03handler"
 	"test_project/handler/it04handler"
 	"test_project/handler/it05handler"
+	"test_project/handler/it06handler"
+	"test_project/handler/it07handler"
+	"test_project/handler/it08handler"
+	"test_project/handler/it09handler"
+	"test_project/handler/it10handler"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
@@ -47,11 +52,44 @@ func SetupITRoutes(api fiber.Router, db *gorm.DB) {
 		Post("/next-queue", it05Handler.GetNextQueue).
 		Post("/clear-queue", it05Handler.ClearQueue).
 		Get("/current-queue", it05Handler.GetCurrentQueue)
+
+	it06Handler := it06handler.NewSkuHandler(db)
+	it06Group := api.Group("it06")
+	it06Group.
+		Get("/skus", it06Handler.GetSkus).
+		Post("/insert-sku", it06Handler.InsertSku).
+		Delete("/delete-sku", it06Handler.DeleteSku)
+
+	it07Handler := it07handler.NewSku2Handler(db)
+	it07Group := api.Group("it07")
+	it07Group.
+		Get("/skus", it07Handler.GetSkus).
+		Post("/insert-sku", it07Handler.InsertSku).
+		Delete("/delete-sku", it07Handler.DeleteSku)
+
+	it08Handler := it08handler.NewQuestionHandler(db)
+	it08Group := api.Group("it08")
+	it08Group.
+		Get("/questions", it08Handler.GetQuestions).
+		Post("/insert-question", it08Handler.InsertQuestion).
+		Delete("/delete-question", it08Handler.DeleteQuestion)
+
+	it09Handler := it09handler.NewCommentHandler(db)
+	it09Group := api.Group("it09")
+	it09Group.
+		Get("/comments", it09Handler.GetComments).
+		Post("/insert-comment", it09Handler.InsertComment)
+
+	it10Handler := it10handler.NewExamHandler(db)
+	it10Group := api.Group("it10")
+	it10Group.
+		Get("/questions", it10Handler.GetQuestions).
+		Post("/submit-exam", it10Handler.SubmitExam)
 }
 
 func main() {
 	// change user password base on db
-	dsn := "root:Bright1998@@(localhost:3306)/exam?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:1234@(localhost:3306)/exam?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")

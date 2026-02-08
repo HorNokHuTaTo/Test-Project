@@ -1,19 +1,16 @@
 <template>
   <div class="queue-container">
     <div class="queue-header">IT 05-{{ page }}</div>
-    <!-- IT 05-1: รับบัตรคิว -->
     <div v-if="page === 1" class="page">
       <button class="main-btn" @click="nextQueue">รับบัตรคิว</button>
       <button class="clear-btn" @click="gotoClear">ล้างคิว</button>
     </div>
-    <!-- IT 05-2: แสดงหมายเลขคิว -->
     <div v-if="page === 2" class="page">
       <div style="font-size:22px;margin-bottom:20px;">หมายเลขคิว</div>
       <div class="queue-number">{{ queue }}</div>
       <div style="margin:20px 0;">วันที่ : {{ queueTime }}</div>
       <button class="back-btn" @click="page = 1">กลับไปหน้ารับบัตรคิว</button>
     </div>
-    <!-- IT 05-3: ล้างคิว -->
     <div v-if="page === 3" class="page">
       <button class="clear-btn" @click="clearQueue">ล้างคิว</button>
       <div style="margin:20px 0;">หมายเลขคิวปัจจุบัน</div>
@@ -42,7 +39,6 @@ export default {
       this.page = 2;
     },
      async gotoClear() {
-      // ดึงคิวปัจจุบันก่อนเข้าหน้าล้างคิว
       const res = await fetch('http://localhost:3000/api/it05/current-queue', { method: 'GET' });
       const data = await res.json();
       this.queue = data.CurrentQueue || 'A0';

@@ -23,7 +23,6 @@ func NewDocumentHandler(dbcon *gorm.DB) *DocumentHandler {
 	}
 }
 
-// POST /api/it03/update-status
 func (h *DocumentHandler) UpdateDocumentsStatus(c *fiber.Ctx) error {
 	var req it03model.UpdateStatusRequest
 	if err := c.BodyParser(&req); err != nil {

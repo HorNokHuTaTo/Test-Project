@@ -1,4 +1,3 @@
-<!-- filepath: src/components/it03.vue -->
 <template>
   <div>
     <div class="header">IT 03-1</div>
@@ -30,8 +29,6 @@
         </tr>
       </tbody>
     </table>
-
-    <!-- Modal อนุมัติ -->
     <div v-if="showApproveModal" class="modal-overlay">
       <div class="modal">
         <div class="modal-header">ยืนยันการอนุมัติ</div>
@@ -46,8 +43,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Modal ไม่อนุมัติ -->
     <div v-if="showRejectModal" class="modal-overlay">
       <div class="modal">
         <div class="modal-header">ยืนยันการไม่อนุมัติ</div>
@@ -113,11 +108,10 @@ export default {
     async loadDocs() {
       try {
         const data = await fetchDocs();
-        // สมมติ backend ส่ง array ของ document
         this.docs = data.map(doc => ({
   id: doc.id,
-  name: doc.title,         // map title → name
-  reason: doc.description, // map description → reason
+  name: doc.title,         
+  reason: doc.description, 
   status: doc.status,
   checked: false
 }));
@@ -160,7 +154,7 @@ export default {
   }
       try {
         await updateStatus(ids, "อนุมัติ", this.modalReason);
-        await this.loadDocs(); // โหลดข้อมูลใหม่จาก backend
+        await this.loadDocs();
         this.closeModal();
       } catch (e) {
         alert(e.message);
@@ -170,7 +164,7 @@ export default {
   const ids = this.docs
     .filter(doc => doc.checked && doc.status === "รออนุมัติ")
     .map(doc => doc.id)
-    .filter(id => !!id); // กรอง null ออก
+    .filter(id => !!id); 
   if (ids.length === 0) 
   return;
   if (!this.modalReason.trim()) {

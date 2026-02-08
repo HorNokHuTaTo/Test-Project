@@ -6,7 +6,6 @@
       <table class="data-table">
         <thead>
           <tr>
-            <!-- <th>ลำดับ</th> -->
             <th>Id</th>
             <th>ชื่อ-สกุล</th>
             <th>ที่อยู่</th>
@@ -18,7 +17,6 @@
         <tbody>
           <tr v-for="(person, idx) in persons" :key="person.id">
              <td>{{ idx + 1 }}</td>
-            <!-- <td>{{ person.id }}</td> -->
             <td>{{ person.full_name }}</td>
             <td>{{ person.address }}</td>
             <td>{{ format(person.birth_date) }}</td>

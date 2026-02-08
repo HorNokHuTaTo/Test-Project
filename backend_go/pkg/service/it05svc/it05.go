@@ -69,17 +69,14 @@ func getNextQueueNumber(current string) string {
 	letter := current[0]
 	digit := current[1]
 
-	// increment digit
 	if digit < '9' {
 		return string(letter) + string(digit+1)
 	}
 
-	// digit is 9, increment letter and reset digit to 0
 	if letter < 'Z' {
 		return string(letter+1) + "0"
 	}
 
-	// reset to A0
 	return "A0"
 }
 
