@@ -32,20 +32,20 @@ export default {
   },
   methods: {
     async nextQueue() {
-      const res = await fetch('http://localhost:3000/api/it05/next-queue', { method: 'POST' });
+      const res = await fetch('https://test-project-0w71.onrender.com/api/it05/next-queue', { method: 'POST' });
       const data = await res.json();
       this.queue = data.current_queue || '';
       this.queueTime = new Date().toLocaleString('th-TH', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' });
       this.page = 2;
     },
      async gotoClear() {
-      const res = await fetch('http://localhost:3000/api/it05/current-queue', { method: 'GET' });
+      const res = await fetch('https://test-project-0w71.onrender.com/api/it05/current-queue', { method: 'GET' });
       const data = await res.json();
       this.queue = data.CurrentQueue || 'A0';
       this.page = 3;
     },
     async clearQueue() {
-      const res = await fetch('http://localhost:3000/api/it05/clear-queue', { method: 'POST' });
+      const res = await fetch('https://test-project-0w71.onrender.com/api/it05/clear-queue', { method: 'POST' });
       const data = await res.json();
       this.queue = data.current_queue || 'A0';
     }

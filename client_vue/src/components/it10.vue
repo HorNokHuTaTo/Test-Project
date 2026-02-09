@@ -39,7 +39,7 @@
 </template>
 
 <script>
-const API = "http://localhost:3000/api/it10";
+const API = "https://test-project-0w71.onrender.com/api/it10";
 
 export default {
   name: "It10",

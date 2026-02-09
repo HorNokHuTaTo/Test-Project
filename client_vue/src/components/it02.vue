@@ -59,7 +59,7 @@
 
 <script>
 async function registerUser(username, password) {
-  const res = await fetch('http://localhost:3000/api/it02/register', {
+  const res = await fetch('https://test-project-0w71.onrender.com/api/it02/register', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password, confirm_password: password })
@@ -72,7 +72,7 @@ async function registerUser(username, password) {
 }
 
 async function loginUser(username, password) {
-  const res = await fetch('http://localhost:3000/api/it02/login', {
+  const res = await fetch('https://test-project-0w71.onrender.com/api/it02/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ username, password })

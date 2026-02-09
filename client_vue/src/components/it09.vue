@@ -35,7 +35,7 @@
 <script setup>
 import { ref, onMounted } from "vue"
 
-const API = "http://localhost:3000/api/it09"
+const API = "https://test-project-0w71.onrender.com/api/it09"
 const input = ref("")
 const comments = ref([])
 

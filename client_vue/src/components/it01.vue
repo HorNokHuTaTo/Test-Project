@@ -94,7 +94,7 @@ export default {
       showView: false,
       form: { full_name: '', birth_date: '', age: '', address: '' },
       selected: {},
-      apiBase: 'http://localhost:3000/api/it01/people', 
+      apiBase: 'https://test-project-0w71.onrender.com/api/it01/people', 
     }
   },
   mounted() {

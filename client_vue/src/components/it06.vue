@@ -56,7 +56,7 @@ const skus = ref([])
 const showModal = ref(false)
 const deleteIndex = ref(null)
 const deleteTarget = ref(null)
-const API = "http://localhost:3000/api/it06" 
+const API = "https://test-project-0w71.onrender.com/api/it06" 
 
 onMounted(async () => {
   await loadSkus()

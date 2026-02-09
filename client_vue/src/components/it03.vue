@@ -62,7 +62,7 @@
 
 <script>
 async function updateStatus(ids, status, description) {
-  const res = await fetch('http://localhost:3000/api/it03/update-status', {
+  const res = await fetch('https://test-project-0w71.onrender.com/api/it03/update-status', {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -80,7 +80,7 @@ async function updateStatus(ids, status, description) {
 }
 
 async function fetchDocs() {
-  const res = await fetch('http://localhost:3000/api/it03/documents');
+  const res = await fetch('https://test-project-0w71.onrender.com/api/it03/documents');
   if (!res.ok) throw new Error('โหลดข้อมูลไม่สำเร็จ');
   return await res.json();
 }

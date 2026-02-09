@@ -71,7 +71,7 @@ const showDeleteModal = ref(false)
 const qrTarget = ref(null)
 const deleteTarget = ref(null)
 
-const API = "http://localhost:3000/api/it07" 
+const API = "https://test-project-0w71.onrender.com/api/it07" 
 
 onMounted(loadSkus)
 

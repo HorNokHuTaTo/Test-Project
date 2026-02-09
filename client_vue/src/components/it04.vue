@@ -140,7 +140,7 @@ export default {
   methods: {
     async fetchOccupations() {
       try {
-        const res = await fetch('http://localhost:3000/api/it04/occupations');
+        const res = await fetch('https://test-project-0w71.onrender.com/api/it04/occupations');
         if (!res.ok) throw new Error('Failed to fetch occupations');
         this.occupations = await res.json();
       } catch (err) {
@@ -219,7 +219,7 @@ export default {
         fd.append('sex', this.formData.sex);
         if (this.formData.profileFile) fd.append('profile', this.formData.profileFile);
 
-        const res = await fetch('http://localhost:3000/api/it04/insert-profile', {
+        const res = await fetch('https://test-project-0w71.onrender.com/api/it04/insert-profile', {
           method: 'POST',
           body: fd
         });
