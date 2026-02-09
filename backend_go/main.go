@@ -89,7 +89,7 @@ func SetupITRoutes(api fiber.Router, db *gorm.DB) {
 
 func main() {
 	// change user password base on db
-	dsn := "root:1234@(localhost:3306)/exam?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:LsCMsrPvzMYeaaPuaqpRXOQuODRFHEHu@(maglev.proxy.rlwy.net:16055)/exam?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
