@@ -1,6 +1,6 @@
 module test_project
 
-go 1.25.6
+go 1.25.0
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
